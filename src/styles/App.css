@@ -1,0 +1,227 @@
+.route-wrapper {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: var(--clr-bg);
+    padding: 1.5rem;
+}
+
+.max-content-wrapper {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: var(--sp-10);
+}
+
+.page-content-wrapper {
+    margin-block-start: var(--nav-height);
+    min-height: calc(100vh - var(--nav-height));
+    overflow: auto;
+}
+
+/* ─── Inputs ─────────────────────────────────────── */
+
+.input {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    background: var(--clr-surface-2);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+    color: var(--clr-text);
+    font-size: var(--text-sm);
+    font-family: var(--font-sans);
+    outline: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.input:focus {
+    border-color: var(--clr-primary);
+    box-shadow: 0 0 0 3px var(--clr-primary-dim);
+}
+
+.input::placeholder {
+    color: var(--clr-text-muted);
+}
+
+.input[data-error="true"] {
+    border-color: var(--clr-danger);
+}
+
+.errorMsg {
+    font-size: var(--text-xs);
+    color: var(--clr-danger);
+    margin-top: 0.375rem;
+}
+
+/* select — reuse .input, override appearance */
+select.input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.875rem center;
+    padding-right: 2.25rem;
+    cursor: pointer;
+}
+
+select.input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ─── Buttons ─────────────────────────────────────── */
+
+.btn {
+    padding: 0.675rem 1.25rem;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* primary */
+.btn--primary {
+    background: var(--clr-primary);
+    color: #fff;
+}
+
+.btn--primary:hover {
+    background: var(--clr-primary-h);
+}
+
+/* secondary */
+.btn--secondary {
+    background: var(--clr-secondary);
+    color: #fff;
+}
+
+.btn--secondary:hover {
+    background: var(--clr-secondary-h);
+}
+
+/* outline */
+.btn--outline {
+    background: transparent;
+    color: var(--clr-primary);
+    border: 1.5px solid var(--clr-primary);
+}
+
+.btn--outline:hover {
+    background: var(--clr-primary);
+    color: #fff;
+}
+
+/* ghost */
+.btn--ghost {
+    background: transparent;
+    color: var(--clr-text-dim);
+}
+
+.btn--ghost:hover {
+    background: var(--clr-surface-2);
+    color: var(--clr-text);
+}
+
+/* danger */
+.btn--danger {
+    background: var(--clr-danger);
+    color: #fff;
+}
+
+.btn--danger:hover {
+    background: var(--clr-danger-h);
+}
+
+/* sizes */
+.btn--sm {
+    padding: 0.4rem 0.85rem;
+    font-size: var(--text-xs);
+}
+
+.btn--lg {
+    padding: 0.85rem 1.75rem;
+    font-size: var(--text-lg);
+}
+
+/* full width */
+.btn--block {
+    width: 100%;
+}
+
+/* ─── Spinner ─────────────────────────────────────── */
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ddd;
+    border-top: 4px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ─── Badges ──────────────────────────────────────── */
+
+.badge {
+    font-size: var(--text-xs);
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    font-weight: 500;
+}
+
+.badge--active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.badge--inactive {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+/* ─── Page layout helpers ─────────────────────────── */
+
+.page-title {
+    margin-bottom: 1rem;
+}
+
+.page-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-card {
+    padding-block: var(--sp-8);
+}
+
+.table-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* ─── PrimeReact DataTable ────────────────────────── */
+
+.p-datatable {
+    padding: 0.5rem;
+    border: 2px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+}
