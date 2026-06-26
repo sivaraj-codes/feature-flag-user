@@ -18,8 +18,8 @@ const loginSchema = yup.object({
 });
 
 const initFormValues = {
-  email: "",
-  password: "",
+  email: "user@gmail.com",
+  password: "user@2026",
 };
 
 const SignInForm = ({ onSwitchToSignup }) => {
