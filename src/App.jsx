@@ -9,13 +9,10 @@ import { AuthPage } from "./pages/auth/AuthPage";
 function App() {
   return (
     <Routes>
-      {/* default → login */}
       <Route path="/" element={<Navigate to="/auth" replace />} />
 
-      {/* public */}
       <Route path="/auth" element={<AuthPage />} />
 
-      {/* protected SA routes */}
       <Route
         element={
           <ProtectedRoute allowedRole={USER_ROLES.EU}>
@@ -24,10 +21,8 @@ function App() {
         }
       >
         <Route path="/check-feature-flag" element={<CheckFeatureFlag />} />
-        {/* add future SA routes here */}
       </Route>
 
-      {/* fallback */}
       <Route path="*" element={<Navigate to="/auth" replace />} />
     </Routes>
   );

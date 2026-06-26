@@ -9,7 +9,7 @@ const styles = {
 
 export function FullPageSpinner() {
   return (
-    <div style={styles.wrapper}>
+    <div style={styles.wrapper} aria-label="loading">
       <div className="spinner" />
     </div>
   );

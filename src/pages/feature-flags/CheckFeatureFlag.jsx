@@ -15,11 +15,8 @@ const initValues = {
 export const CheckFeatureFlag = () => {
   const { data: orgFlags = [], isLoading } = useOrgFlags();
   const { mutateAsync: checkFlag, isPending } = useCheckOrgFlag();
-  // const [orgFlags, isLoading] = [[], false];
 
-  // const [checkFlag, isPending] = [() => {}, false];
-
-  const [result, setResult] = useState(null); // { key, enabled } | { error }
+  const [result, setResult] = useState(null);
 
   const handleCheck = async (values, { setSubmitting }) => {
     setResult(null);
@@ -64,7 +61,7 @@ export const CheckFeatureFlag = () => {
                 value={values.flagKey}
                 onChange={(e) => {
                   handleChange(e);
-                  setResult(null); // clear result on key change
+                  setResult(null);
                 }}
                 onBlur={handleBlur}
                 data-error={Boolean(touched.flagKey && errors.flagKey)}

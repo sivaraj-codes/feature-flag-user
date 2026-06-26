@@ -6,7 +6,6 @@ import {
 } from "../services/organization.service";
 import { queryKeys } from "./queryKeys";
 
-// Used in protected pages (requires auth cookie)
 export function useOrganizations() {
   return useQuery({
     queryKey: queryKeys.organizations,
@@ -14,7 +13,6 @@ export function useOrganizations() {
   });
 }
 
-// Used in SignUpForm — no auth required
 export function usePublicOrganizations() {
   return useQuery({
     queryKey: queryKeys.publicOrganizations,

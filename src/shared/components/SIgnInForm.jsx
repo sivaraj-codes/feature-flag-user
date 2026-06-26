@@ -45,7 +45,6 @@ const SignInForm = ({ onSwitchToSignup }) => {
 
   return (
     <section className={styles.card}>
-      {/* Brand */}
       <header className={styles.brand}>
         <span className={styles.brandIcon} aria-hidden="true">
           ⚑
